@@ -2,10 +2,16 @@ import { CORE_CONCEPTS } from "./data";
 import { Header } from "./components/Header/Header";
 import { CoreConcept } from "./components/CoreComponents";
 import TabButton from "./components/TabButton";
+import { useState } from "react";
 
 const tabLabels = ["Components", "JSX", "Props", "State"];
 
 function App() {
+  const [showMenu, setShowMenu] = useState("");
+  const handleSelect = (val) => {
+    setShowMenu(val);
+  };
+
   return (
     <div>
       <Header />
@@ -27,9 +33,12 @@ function App() {
           <h2>Examples</h2>
           <menu>
             {tabLabels.map((label, index) => (
-              <TabButton key={index}>{label}</TabButton>
+              <TabButton key={index} onSelect={() => handleSelect(label)}>
+                {label}
+              </TabButton>
             ))}
           </menu>
+          {showMenu}
         </section>
       </main>
     </div>
