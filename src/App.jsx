@@ -1,6 +1,9 @@
 import { CORE_CONCEPTS } from "./data";
 import { Header } from "./components/Header/Header";
 import { CoreConcept } from "./components/CoreComponents";
+import TabButton from "./components/TabButton";
+
+const tabLabels = ["Components", "JSX", "Props", "State"];
 
 function App() {
   return (
@@ -20,6 +23,14 @@ function App() {
               />
             ))}
           </ul>
+        </section>
+        <section id="examples">
+          <h2>Examples</h2>
+          <menu>
+            {tabLabels.map((label) => (
+              <TabButton>{label}</TabButton>
+            ))}
+          </menu>
         </section>
       </main>
     </div>
