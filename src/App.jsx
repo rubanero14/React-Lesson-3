@@ -1,3 +1,5 @@
+import ReactImagePath from "./assets/react-core-concepts.png";
+
 const dynamicDescWords = ["Fundamental", "Crucial", "Core"];
 
 const getRandomIdx = (arrLength) => {
@@ -9,7 +11,7 @@ function Header() {
     dynamicDescWords[getRandomIdx(dynamicDescWords.length - 1)];
   return (
     <header>
-      <img src="src/assets/react-core-concepts.png" alt="Stylized atom" />
+      <img src={ReactImagePath} alt="Stylized atom" />
       <h1>React Essentials</h1>
       <p>
         {randomDesc} React concepts you will need for almost any app you are
