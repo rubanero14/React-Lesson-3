@@ -1,3 +1,5 @@
+import "./CoreComponents.css";
+
 export function CoreConcept({
   src = "",
   title = "",

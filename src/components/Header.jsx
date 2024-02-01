@@ -1,4 +1,5 @@
 import ReactImg from "../assets/react-core-concepts.png";
+import "./Header.css";
 
 const dynamicDescWords = ["Fundamental", "Crucial", "Core"];
 const getRandomIdx = (arrLength) => {
