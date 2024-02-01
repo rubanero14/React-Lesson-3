@@ -16,7 +16,6 @@ function App() {
             {CORE_CONCEPTS.map((data, index) => (
               <CoreConcept
                 key={index}
-                id={index}
                 src={data.image}
                 title={data.title}
                 description={data.description}
@@ -27,8 +26,8 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            {tabLabels.map((label) => (
-              <TabButton>{label}</TabButton>
+            {tabLabels.map((label, index) => (
+              <TabButton key={index}>{label}</TabButton>
             ))}
           </menu>
         </section>

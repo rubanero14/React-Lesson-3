@@ -1,9 +1,12 @@
 import "./TabButton.css";
 
 export default function TabButton({ children }) {
+  const handleClick = () => {
+    console.log("Hello");
+  };
   return (
     <li>
-      <button>{children}</button>
+      <button onClick={handleClick}>{children}</button>
     </li>
   );
 }
