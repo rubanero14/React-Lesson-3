@@ -1,4 +1,4 @@
-import { CORE_CONCEPTS } from "./data";
+import { CORE_CONCEPTS, EXAMPLES } from "./data";
 import { Header } from "./components/Header/Header";
 import { CoreConcept } from "./components/CoreComponents";
 import TabButton from "./components/TabButton";
@@ -7,9 +7,9 @@ import { useState } from "react";
 const tabLabels = ["Components", "JSX", "Props", "State"];
 
 function App() {
-  const [showMenu, setShowMenu] = useState("Please click any tabs above.");
+  const [showMenu, setShowMenu] = useState(EXAMPLES.components);
   const handleSelect = (val) => {
-    setShowMenu(val);
+    setShowMenu(EXAMPLES[val.toLowerCase()]);
   };
 
   return (
@@ -33,15 +33,18 @@ function App() {
           <h2>Examples</h2>
           <menu>
             {tabLabels.map((label, index) => (
-              <TabButton
-                key={index}
-                onSelect={() => handleSelect("Details on " + label)}
-              >
+              <TabButton key={index} onSelect={() => handleSelect(label)}>
                 {label}
               </TabButton>
             ))}
           </menu>
-          {showMenu}
+          <div id="tab-content">
+            <h3>{showMenu.title}</h3>
+            <p>{showMenu.description}</p>
+            <pre id="code">
+              <code>{showMenu.code}</code>
+            </pre>
+          </div>
         </section>
       </main>
     </div>

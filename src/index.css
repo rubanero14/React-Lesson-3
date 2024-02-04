@@ -46,3 +46,9 @@ main h2 {
 #tab-content code {
   font-size: 1rem;
 }
+
+#code {
+  background-color: #222;
+  border-radius: 8px;
+  overflow-x: auto;
+}
