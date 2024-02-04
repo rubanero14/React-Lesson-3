@@ -7,7 +7,7 @@ import { useState } from "react";
 const tabLabels = ["Components", "JSX", "Props", "State"];
 
 function App() {
-  const [showMenu, setShowMenu] = useState("");
+  const [showMenu, setShowMenu] = useState("Please click any tabs above.");
   const handleSelect = (val) => {
     setShowMenu(val);
   };
