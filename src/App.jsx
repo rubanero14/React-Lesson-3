@@ -33,7 +33,11 @@ function App() {
           <h2>Examples</h2>
           <menu>
             {tabLabels.map((label, index) => (
-              <TabButton key={index} onSelect={() => handleSelect(label)}>
+              <TabButton
+                className={showMenu && showMenu.title === label ? "active" : ""}
+                key={index}
+                onSelect={() => handleSelect(label)}
+              >
                 {label}
               </TabButton>
             ))}
