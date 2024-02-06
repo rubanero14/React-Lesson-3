@@ -83,4 +83,10 @@ export const EXAMPLES = {
       }
     `,
   },
+  "source code": {
+    title: "Source Code",
+    description:
+      "State allows React components to change their output over time in response to user actions, network responses, and anything else.",
+    link: "https://github.com/rubanero14/React-Lesson-3",
+  },
 };

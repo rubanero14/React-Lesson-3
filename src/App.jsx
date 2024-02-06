@@ -4,7 +4,7 @@ import { CoreConcept } from "./components/CoreComponents";
 import TabButton from "./components/TabButton";
 import { useState } from "react";
 
-const tabLabels = ["Components", "JSX", "Props", "State"];
+const tabLabels = ["Components", "JSX", "Props", "State", "Source Code"];
 
 function App() {
   const [showMenu, setShowMenu] = useState();
@@ -47,10 +47,19 @@ function App() {
             {showMenu && (
               <>
                 <h3>{showMenu.title}</h3>
-                <p>{showMenu.description}</p>
-                <pre id="code">
-                  <code>{showMenu.code}</code>
-                </pre>
+                {showMenu.link && (
+                  <a href={showMenu.link} className="mt-3" target="_blank">
+                    {showMenu.title} {"</>"}
+                  </a>
+                )}
+                {showMenu.code && !showMenu.link && (
+                  <>
+                    <p>{showMenu.description}</p>
+                    <pre id="code">
+                      <code>{showMenu.code}</code>
+                    </pre>
+                  </>
+                )}
               </>
             )}
           </div>

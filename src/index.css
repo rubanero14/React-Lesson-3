@@ -52,3 +52,12 @@ main h2 {
   border-radius: 8px;
   overflow-x: auto;
 }
+
+.mt-3 {
+  margin: 1rem 0 0 0;
+}
+
+a {
+  display: block;
+  text-align: center;
+}
