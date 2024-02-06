@@ -7,7 +7,7 @@ import { useState } from "react";
 const tabLabels = ["Components", "JSX", "Props", "State"];
 
 function App() {
-  const [showMenu, setShowMenu] = useState(EXAMPLES.components);
+  const [showMenu, setShowMenu] = useState();
   const handleSelect = (val) => {
     setShowMenu(EXAMPLES[val.toLowerCase()]);
   };
@@ -39,11 +39,16 @@ function App() {
             ))}
           </menu>
           <div id="tab-content">
-            <h3>{showMenu.title}</h3>
-            <p>{showMenu.description}</p>
-            <pre id="code">
-              <code>{showMenu.code}</code>
-            </pre>
+            {!showMenu && <p>Please select a topic.</p>}
+            {showMenu && (
+              <>
+                <h3>{showMenu.title}</h3>
+                <p>{showMenu.description}</p>
+                <pre id="code">
+                  <code>{showMenu.code}</code>
+                </pre>
+              </>
+            )}
           </div>
         </section>
       </main>
